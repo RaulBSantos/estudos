@@ -1,0 +1,9 @@
+$default-margin: 20px;
+
+.categories {
+  /* Nesting properties margin, font, etc (Gera para css: margin-*, font-*, etc)*/
+  margin : {
+    top: $default-margin;
+    bottom: $default-margin;
+  }
+}
