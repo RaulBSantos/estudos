@@ -1,4 +1,5 @@
-# estudos
-Repositório para manter códigos desenvolvidos em cursos, com o intuito de aprendizado e conteúdo para pesquisa.
+# Livro: Django Essencial
 
-:small_blue_diamond: Cada projeto está em um branch específico com o nome (com seu próprio readme.md inclusive..)
+Branch para seguir estudos do livro **Django Essencial**
+
+- Cada capítulo terá sua própria pasta para melhor organização
