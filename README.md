@@ -1,4 +1,9 @@
-# estudos
-Repositório para manter códigos desenvolvidos em cursos, com o intuito de aprendizado e conteúdo para pesquisa.
+# get_mp3 web
 
-:small_blue_diamond: Cada projeto está em um branch específico com o nome (com seu próprio readme.md inclusive..)
+###Finalidade: Aplicar aprendizados de frameworks para front-end
+
+###Funcionalidades: 
+- Exibir thumbnails dos vídeos identificados pelo texto
+- Para cada vídeo, exibir informações principais nome do autor, música, duração
+- Permitir que o usuário mude sem recarregar a página o vídeo que será fonte para o download 
+- 
