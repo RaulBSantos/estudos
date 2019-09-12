@@ -8,14 +8,31 @@ function doSearch(query) {
 }
 
 class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            input: '',
+            list: [],
+        };
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onSubmit(e) {
+        e.preventDefault();
+        doSearch(this.state.input)
+            .then((hits) => this.setState({ list: hits }));
+    }
+    onChange(e) {
+        this.setState({ input: e.target.value });
+    }
     render() {
         return (
             <div>
                 <h1>Search Hacker News with React</h1>
-                <form type='submit' onSubmit={() => 'a'}>
-                    <input type='text' onChange={() => 'a'}></input>
+                <form type='submit' onSubmit={this.onSubmit}>
+                    <input type='text' onChange={this.onChange}></input>
                     <button type='text'>Search</button>
-                    {/* show the list of items */}
+                    {this.state.list.map(item => <div key={item.objectID}>{item.title}</div>)}
                 </form>
             </div>
         );
