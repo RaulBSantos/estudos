@@ -22,12 +22,16 @@ function appendList(list) {
     let listNode = document.createElement('div');
     listNode.setAttribute('id', 'list');
     document.getElementById('app').appendChild(listNode);
-    list.forEach(item => {
+    list.forEach(appendItem(listNode));
+};
+function appendItem(listNode) {
+    return item => {
         let itemNode = document.createElement('div');
         itemNode.appendChild(document.createTextNode(item.title));
         listNode.appendChild(itemNode);
-    });
-};
+    };
+}
+
 function getValueFromElementById(id) {
     return document.getElementById(id).value;
 }
