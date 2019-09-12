@@ -32,12 +32,18 @@ class App extends React.Component {
                 <form type='submit' onSubmit={this.onSubmit}>
                     <input type='text' onChange={this.onChange}></input>
                     <button type='text'>Search</button>
-                    {this.state.list.map(item => <div key={item.objectID}>{item.title}</div>)}
                 </form>
+                {this.state.list.map(item =>
+                    <Item key={item.objectID} item={item} />
+                )}
             </div>
         );
     }
 }
+
+const Item = ({ item }) =>
+    <div key={item.objectID}>{item.title}</div>
+
 ReactDOM.render(
     <App />,
     document.getElementById('app'),
