@@ -12,12 +12,18 @@ function doSearch(query) {
 function addButtonEvent() {
     document.getElementById('searchButton')
         .addEventListener('click', onSearch);
-    // (4) remove old list if there is already a list
 };
 function onSearch() {
+    removeList();
     doSearch(getValueFromElementById('searchInput'))
         .then(appendList);
 };
+function removeList() {
+    let listNode = document.getElementById('list');
+    if (listNode) {
+        listNode.parentNode.removeChild(listNode);
+    }
+}
 function appendList(list) {
     let listNode = document.createElement('div');
     listNode.setAttribute('id', 'list');
