@@ -6,3 +6,23 @@ function doSearch(query) {
         .then(response => response.json())
         .then(result => result.hits);
 }
+
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Search Hacker News with React</h1>
+                <form type='submit' onSubmit={() => 'a'}>
+                    <input type='text' onChange={() => 'a'}></input>
+                    <button type='text'>Search</button>
+                    {/* show the list of items */}
+                </form>
+            </div>
+        );
+    }
+}
+ReactDOM.render(
+    <App />,
+    document.getElementById('app'),
+    // () => console.log('Renderized App component')
+);
