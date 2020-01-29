@@ -68,6 +68,9 @@ module.exports = function(ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: ctx.dev
+        ? { API: JSON.stringify("http://viladosilicio.com.br/wp-json/wp/") }
+        : { API: JSON.stringify("http://viladosilicio.com.br/wp-json/wp/") },
       scopeHoisting: true,
       vueRouterMode: "hash", // available values: 'hash', 'history'
       showProgress: true,
