@@ -1,4 +1,33 @@
-# estudos
-Repositório para manter códigos desenvolvidos em cursos, com o intuito de aprendizado e conteúdo para pesquisa.
+Vídeo com o [Webnário](https://www.youtube.com/watch?v=wTaV4qXyzOg)
 
-:small_blue_diamond: Cada projeto está em um branch específico com o nome (com seu próprio readme.md inclusive..)
+# Quasar App (webnar-digital)
+
+App de Blog
+
+## Install the dependencies
+
+```bash
+yarn
+```
+
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+
+```bash
+quasar dev
+```
+
+### Lint the files
+
+```bash
+yarn run lint
+```
+
+### Build the app for production
+
+```bash
+quasar build
+```
+
+### Customize the configuration
+
+See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
