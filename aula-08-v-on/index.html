@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vuejs do jeito ninja!</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ titulo }}</h1>
+      <input type="text" v-model="nome" @keyup.enter="limpar" />
+      <form action="https://google.com">
+        <input type="text" name="nome" id="nome" />
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          @click.right.prevent.stop="enviar"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+
+        data: {
+          titulo: 'Vuejs do jeito ninja!',
+          nome: 'Raul'
+        },
+
+        methods: {
+          enviar() {
+            alert('Enviado!');
+          },
+          limpar() {
+            alert('Limpando');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

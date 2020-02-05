@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vuejs do jeito ninja!</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ titulo }}</h1>
+      <button class="btn" :class="btnClassEnviarSimples">
+        Classe por string
+      </button>
+      <button class="btn" :class="btnClassLimpar" :style="btnStyleLimpar">
+        Limpar
+      </button>
+      <button class="btn" :class="btnClassEnviar" :style="btnStyleEnviar">
+        Enviar
+      </button>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          titulo: 'Vuejs do jeito ninja!',
+          btnClassEnviarSimples: 'btn-primary btn-lg',
+          // É possível passar um objeto para o v-bind:class -> Só aplica o que for true
+          btnClassLimpar: { 'btn-danger': true, 'btn-sm': true },
+          // Também pode ter as classes com array e dentro desse array pode ter um objeto
+          btnClassEnviar: ['btn-primary', { 'btn-lg': true }],
+          btnStyleLimpar: [
+            { 'font-size': '50px' },
+            { 'text-transform': 'lowercase' }
+          ],
+          btnStyleEnviar: 'font-size: 10px'
+        }
+      });
+    </script>
+  </body>
+</html>
