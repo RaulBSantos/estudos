@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vuejs do jeito ninja!</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ titulo }}</h1>
+      <label for="">Nome</label><br />
+      <input type="text" v-model="nome" />
+
+      <br /><br />
+      <label for="">Telefone</label><br />
+      <input type="text" v-model="telefone" />
+
+      <br /><br />
+      <label for="">Deseja receber nossas novidades?</label><br />
+      <input type="radio" value="Sim" v-model="novidades" />Sim
+      <input type="radio" value="Não" v-model="novidades" />Não
+
+      <br /><br />
+      <label for="">Interesses</label><br />
+      <input type="checkbox" value="Futebol" v-model="interesses" />
+      Futebol<br />
+      <input type="checkbox" value="Formula 1" v-model="interesses" /> Formula
+      1<br />
+      <input type="checkbox" value="Corrida" v-model="interesses" />
+      Corrida<br />
+
+      <br /><br />
+      <label for="">Como nos conheceu?</label><br />
+      <select v-model="conheceu">
+        <option value="">Escolha</option>
+        <option value="Google">Google</option>
+        <option value="TV">TV</option>
+        <option value="Revista">Revista</option>
+      </select>
+
+      <br /><br />
+
+      <button>ENVIAR</button>
+
+      <hr />
+
+      Nome: {{nome}} <br />
+      Telfone: {{telefone}} <br />
+      Novidades: {{novidades}} <br />
+      Interesses: {{interesses}} <br />
+      Conheceu por: {{conheceu}} <br />
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          titulo: 'Vuejs do jeito ninja!',
+          nome: '',
+          telefone: '',
+          novidades: '',
+          interesses: [],
+          conheceu: ''
+        }
+      });
+    </script>
+  </body>
+</html>
