@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vuejs do jeito ninja!</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ titulo }}</h1>
+      <ul>
+        <li v-for="usuario in usuarios">
+          {{usuario.nome | truncate('5') | toUpperCase}}
+        </li>
+      </ul>
+      <form action="https://google.com">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          @click.right.prevent.stop="enviar"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+
+        data: {
+          titulo: 'Vuejs do jeito ninja!',
+          usuarios: [
+            { nome: 'Jon Snow' },
+            { nome: 'Raul' },
+            { nome: 'Daenerys Targaryen' }
+          ]
+        },
+
+        filters: {
+          toUpperCase(str) {
+            return str.toUpperCase();
+          },
+
+          truncate(str, length) {
+            return str.length > length ? str.substring(0, length) + '...' : str;
+          }
+        },
+
+        methods: {
+          enviar() {
+            alert('Enviado!');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

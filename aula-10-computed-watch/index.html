@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vuejs do jeito ninja!</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ titulo }}</h1>
+      <!-- {{nome}} <br />
+      {{toUpperCase}} <br /> -->
+      <hr />
+      Cached: {{fullName}}
+      <hr />
+      NonCached: {{fullNameNonCached()}}
+      <hr />
+      Cached2: {{fullName}}
+      <hr />
+      NonCached2: {{fullNameNonCached()}}
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+
+        data: {
+          titulo: 'Vuejs do jeito ninja!',
+          firstName: '',
+          lastName: ''
+          // fullName: ''
+        },
+
+        computed: {
+          // Aqui eu tenho métodos a serem retornados para a tela, neste caso são cacheados
+          // então caso seja chamado em mais que um lugar, o método é rodado
+          // apenas uma vez
+          fullName() {
+            console.log('Executou o computed');
+            return this.firstName + ' ' + this.lastName;
+          }
+          // toUpperCase() {
+          //   return this.nome.toUpperCase();
+          // }
+        },
+
+        watch: {
+          firstName(newValue) {
+            this.updateUser();
+          }
+          // lastName(newValue) {
+          //   this.fullName = this.firstName + ' ' + newValue;
+          // },
+          // nome(newValue, oldValue) {
+          //   console.log('newValue', newValue);
+          //   console.log('oldValue', oldValue);
+          // }
+        },
+
+        methods: {
+          fullNameNonCached() {
+            console.log('Executou o method');
+            return this.firstName + ' ' + this.lastName;
+          },
+          updateUser() {
+            console.log('Usuário atualizado -> Uma chamada Ajax por exemplo');
+          },
+          enviar() {
+            alert('Enviado!');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
