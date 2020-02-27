@@ -1,4 +1,5 @@
 # estudos
-Repositório para manter códigos desenvolvidos em cursos, com o intuito de aprendizado e conteúdo para pesquisa.
 
-:small_blue_diamond: Cada projeto está em um branch específico com o nome (com seu próprio readme.md inclusive..)
+Fonte: https://itnext.io/vuex-made-simple-getting-started-6bf229d432cf
+
+Compreender de maneira simples o funcionamento e motivação para utilizar o Vuex.
